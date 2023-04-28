@@ -22,11 +22,12 @@ const button = document.getElementById('add-row')
 table.addEventListener('click', colorize)
 
 function colorize (event) {
-    console.log(selector.value)
     const target = event.target
-    if (target.className.length){
-        target.className = ''
-    } else{
-        target.className = selector.value
+    if (target.tagName !== "TABLE"){
+        if (target.className === selector.value){
+            target.className = ''
+    }   else{
+            target.className = selector.value
+         }
     }
 }
